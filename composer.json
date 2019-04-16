@@ -47,8 +47,7 @@
             "Tests\\": "tests/"
         }
     },
-    "minimum-stability": "stable",
-    "prefer-stable": true,
+     "minimum-stability": "dev",
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
