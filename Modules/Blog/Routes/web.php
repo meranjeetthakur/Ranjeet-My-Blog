@@ -14,4 +14,6 @@
 Route::prefix('blog')->group(function() {
     Route::get('/', 'BlogController@index');
     Route::any('/add', 'BlogController@create');
+    Route::any('/edit/{id}', 'BlogController@edit');
+    Route::any('/delete/{id}', 'BlogController@destroy');
 });

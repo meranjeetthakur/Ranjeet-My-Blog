@@ -28,23 +28,14 @@ class BlogController extends Controller
     {
         if($request->method() == "POST")
         {
+           
             $post = new Post();
             $post->fill($request->all());
             $post->save();
             
-            return back();
+            return redirect('/blog')->with(['level' => 'text-success', 'content' => "Post added successfully."]);
         }
         return view('blog::form');
-    }
-
-    /**
-     * Show the specified resource.
-     * @param int $id
-     * @return Response
-     */
-    public function show($id)
-    {
-        return view('blog::show');
     }
 
     /**
@@ -52,20 +43,18 @@ class BlogController extends Controller
      * @param int $id
      * @return Response
      */
-    public function edit($id)
+    public function edit($id, Request $request)
     {
-        return view('blog::edit');
-    }
-
-    /**
-     * Update the specified resource in storage.
-     * @param Request $request
-     * @param int $id
-     * @return Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+        $post = Post::where('id', $id)->first();
+        if($request->method() == "POST")
+        {
+            $post->fill($request->all());
+            $post->save();
+            
+            return redirect('/blog')->with(['level' => 'text-success', 'content' => "Post updated successfully."]);;
+        }
+        
+        return view('blog::form')->with(compact('post'));
     }
 
     /**
@@ -75,6 +64,8 @@ class BlogController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::where('id', $id)->delete();
+        
+        return redirect('/blog')->with(['level' => 'text-success', 'content' => "Post deleted successfully."]);;
     }
 }
