@@ -1,5 +1,5 @@
 {
-    "name": "ranjeet-blog/blog-myblog",
+    "name": "ranjeet-blog/blog-myblog1.0*",
     "type": "project",
     "description": "The Laravel Framework.",
     "keywords": [
@@ -47,7 +47,6 @@
             "Tests\\": "tests/"
         }
     },
-     "minimum-stability": "dev",
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
@@ -59,5 +58,7 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ]
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
