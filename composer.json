@@ -1,5 +1,5 @@
 {
-    "name": "ranjeet-blog/blog:^1.0",
+    "name": "ranjeet-blog/blog:*1.0",
     "type": "project",
     "description": "The Laravel Framework.",
     "keywords": [
